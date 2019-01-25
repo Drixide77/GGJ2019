@@ -27,6 +27,11 @@ public class RigidBodyMovement : MonoBehaviour
     }
 
     public void AddConch(GameObject conch) {
+        conches.Add(conch);
+    }
 
+    public GameObject GetLastConch()
+    {
+        if (conches.Count > 0) return conches.ToArray[conches.Count-1];
     }
 }
