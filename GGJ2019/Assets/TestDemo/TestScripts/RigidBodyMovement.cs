@@ -32,6 +32,6 @@ public class RigidBodyMovement : MonoBehaviour
 
     public GameObject GetLastConch()
     {
-        if (conches.Count > 0) return conches.ToArray[conches.Count-1];
+        return null; // if (conches.Count > 0) return conches.ToArray[conches.Count-1];   <--- Wasn't compiling. Please fix, Max
     }
 }
