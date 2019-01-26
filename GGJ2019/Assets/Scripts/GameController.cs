@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour {
         int[] roundTimers = new int[numberOfRounds];
 
         Unfade();
-        StartTimer();
+        // StartTimer();
     }
 
     void DoWave()
@@ -213,7 +213,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    void StartTimer()
+    public void StartTimer()
     {
         StartCoroutine(StartTimerCoroutine(() => {
             gameRunning = true;
