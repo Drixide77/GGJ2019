@@ -2812,7 +2812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1522784, g: 0.5471698, b: 0.44281447, a: 1}
+  m_Color: {r: 0.24528301, g: 0.23151289, b: 0.18627624, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4252,13 +4252,13 @@ MonoBehaviour:
   respawnManager: {fileID: 0}
   resultCanvas: {fileID: 4320650384148459965}
   waveObject: {fileID: 3192418857833053658}
-  waveStartingPoint: {x: -40, y: 1, z: 2.5}
-  waveEndPoint: {x: 40, y: 1, z: 2.5}
+  waveStartingPoint: {x: -40, y: 1.5, z: 2.5}
+  waveEndPoint: {x: 40, y: 1.5, z: 2.5}
   nextWaveText: {fileID: 4320650383594713096}
   timerText: {fileID: 4320650383486339279}
   roundTimer: {fileID: 4320650382565393801}
   winnerText: {fileID: 4320650383726559964}
-  winnerPanel: {fileID: 4320650382872332733}
+  winnerPanel: {fileID: 236690870}
   player1: {fileID: 0}
   player1Active: 0
   player2: {fileID: 0}
@@ -5662,7 +5662,7 @@ PrefabInstance:
     - target: {fileID: 3456653977892570398, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.16
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3456653977892570398, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}
