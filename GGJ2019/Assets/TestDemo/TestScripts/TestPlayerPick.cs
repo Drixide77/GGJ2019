@@ -6,7 +6,7 @@ public class TestPlayerPick : MonoBehaviour
 {
     public RigidBodyMovement rbm;
     private Rigidbody body;
-    public GameObject conch, initialAnchor, tailOut, tailIn;
+    public GameObject conch, cup, can, initialAnchor, tailOut, tailIn;
     public Transform newCapsulePos;
 
 
@@ -34,14 +34,31 @@ public class TestPlayerPick : MonoBehaviour
                     tailIn.SetActive(true);
                     gameObject.transform.position = newCapsulePos.position;
                 }
-                Destroy(pus.GetRoot());
-                GameObject lastConch = rbm.GetLastConch();
-                Transform conchAnchor;
-                if (lastConch == null) conchAnchor = initialAnchor.transform;
-                else {
-                    conchAnchor = lastConch.GetComponent<ConchScript>().GetAnchor().transform;
+                GameObject toSpawn = null;
+                switch (pus.GetRoot().tag) {
+                    case "Conch": {
+                            toSpawn = conch;
+                            break;
+                    }
+                    case "Cup":
+                        {
+                            toSpawn = cup;
+                            break;
+                        }
+                    case "Can":
+                        {
+                            toSpawn = can;
+                            break;
+                        }
                 }
-                GameObject addedConch = Instantiate(conch, conchAnchor.position, conchAnchor.rotation);
+                Destroy(pus.GetRoot());
+                GameObject lastShell = rbm.GetLastConch();
+                Transform conchAnchor;
+                if (lastShell == null) conchAnchor = initialAnchor.transform;
+                else {
+                    conchAnchor = lastShell.GetComponent<ConchScript>().GetAnchor().transform;
+                }
+                GameObject addedConch = Instantiate(toSpawn, conchAnchor.position, conchAnchor.rotation);
                 addedConch.transform.parent = conchAnchor;
                 rbm.AddConch(addedConch);
             }
