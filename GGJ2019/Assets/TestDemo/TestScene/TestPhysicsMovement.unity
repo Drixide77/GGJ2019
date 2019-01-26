@@ -960,46 +960,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427470, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427470, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427470, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: m_Drag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427470, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: backFactor
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: forwardSpeedFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: rotationSpeedFactor
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
-        type: 3}
-      propertyPath: speed
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a589beea8d139b7419c63c8967275974, type: 3}
 --- !u!1001 &6215401655524392459
