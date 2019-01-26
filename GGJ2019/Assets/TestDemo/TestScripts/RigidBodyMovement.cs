@@ -18,8 +18,7 @@ public class RigidBodyMovement : MonoBehaviour
         score = 0;
         body = GetComponent<Rigidbody>();
         conches = new List<GameObject>();
-        pause = false;
-        //pause = true; Uncomment Later
+        pause = true; 
     }
 
     // Update is called once per frame
