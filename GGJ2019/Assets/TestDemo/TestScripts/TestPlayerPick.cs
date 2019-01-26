@@ -8,12 +8,13 @@ public class TestPlayerPick : MonoBehaviour
     private Rigidbody body;
     public GameObject conch, cup, can, initialAnchor, tailOut, tailIn;
     public Transform newCapsulePos;
-
+    private AudioSource playerAudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        playerAudioSource = rbm.gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class TestPlayerPick : MonoBehaviour
             GameObject target = other.gameObject;
             PickUpScript pus = target.GetComponent<PickUpScript>();
             if (pus != null) {
+                playerAudioSource.Play();
                 if (tailOut != null) {
                     Destroy(tailOut);
                     tailIn.SetActive(true);
