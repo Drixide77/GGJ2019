@@ -20,7 +20,10 @@ public class TestPlayerPick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (rbm.GetConchCount() == 0 && !tailOut.activeInHierarchy) {
+            tailOut.SetActive(true);
+            tailIn.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,8 +34,8 @@ public class TestPlayerPick : MonoBehaviour
             PickUpScript pus = target.GetComponent<PickUpScript>();
             if (pus != null) {
                 playerAudioSource.Play();
-                if (tailOut != null) {
-                    Destroy(tailOut);
+                if (tailOut.activeInHierarchy) {
+                    tailOut.SetActive(false);
                     tailIn.SetActive(true);
                     gameObject.transform.position = newCapsulePos.position;
                 }
@@ -62,7 +65,7 @@ public class TestPlayerPick : MonoBehaviour
                 }
                 GameObject addedConch = Instantiate(toSpawn, conchAnchor.position, conchAnchor.rotation);
                 addedConch.transform.parent = conchAnchor;
-                rbm.AddConch(addedConch);
+                rbm.AddConch(addedConch);                
             }
         }
     }
