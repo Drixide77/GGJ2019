@@ -17,19 +17,19 @@ public class JoinScreenController : MonoBehaviour
     {
         // TODO
         gameController.player1Active = true;
-        gameController.player2Active = false;
-        gameController.player3Active = false;
-        gameController.player4Active = false;
+        gameController.player2Active = true;
+        gameController.player3Active = true;
+        gameController.player4Active = true;
 
         gameController.uiController.SetPlayerEnabled(1, true);
-        gameController.uiController.SetPlayerEnabled(2, false);
-        gameController.uiController.SetPlayerEnabled(3, false);
-        gameController.uiController.SetPlayerEnabled(4, false);
+        gameController.uiController.SetPlayerEnabled(2, true);
+        gameController.uiController.SetPlayerEnabled(3, true);
+        gameController.uiController.SetPlayerEnabled(4, true);
 
         gameController.player1.gameObject.SetActive(true);
-        gameController.player2.gameObject.SetActive(false);
-        gameController.player3.gameObject.SetActive(false);
-        gameController.player4.gameObject.SetActive(false);
+        gameController.player2.gameObject.SetActive(true);
+        gameController.player3.gameObject.SetActive(true);
+        gameController.player4.gameObject.SetActive(true);
 
         gameObject.SetActive(false);
     }
