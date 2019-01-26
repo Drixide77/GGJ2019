@@ -464,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &820210779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -556,7 +556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &931250953
 RectTransform:
   m_ObjectHideFlags: 0
@@ -722,7 +722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &979967871
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1110,7 +1110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1385717338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1674,6 +1674,10 @@ MonoBehaviour:
   player2: {fileID: 4320650382573856800}
   player3: {fileID: 4320650383852893197}
   player4: {fileID: 4320650382654321754}
+  crab1: {fileID: 820210781}
+  crab2: {fileID: 1385717340}
+  crab3: {fileID: 979967873}
+  crab4: {fileID: 931250955}
   gameController: {fileID: 4320650383646258913}
 --- !u!1 &4320650382460571484
 GameObject:
@@ -5723,6 +5727,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.3040242
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558171165762852873, guid: 6d64c8e3694428d41be1a197581d7a4c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 442865914950857583, guid: 6d64c8e3694428d41be1a197581d7a4c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491460333528688736, guid: 6d64c8e3694428d41be1a197581d7a4c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d64c8e3694428d41be1a197581d7a4c, type: 3}
