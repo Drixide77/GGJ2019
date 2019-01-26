@@ -6,7 +6,7 @@ public class MapRespawner : MonoBehaviour
 {
 
     public GameObject[] maps;
-    public bool renew = false;
+    bool renew = false;
     private List<GameObject> availableMaps;
     private GameObject currentMap;
 

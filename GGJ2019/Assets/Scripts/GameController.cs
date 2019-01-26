@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     public Fader fader;
     public UIController uiController;
     public RespawnManager respawnManager;
+    public MapRespawner mapRespawner;
     public GameObject resultCanvas;
     public GameObject waveObject;
     public Vector3 waveStartingPoint;
@@ -105,6 +106,7 @@ public class GameController : MonoBehaviour {
             if (!spawnTriggered && (currentTime / duration) >= 0.5f)
             {
                 spawnTriggered = true;
+                mapRespawner.ReMap();
                 respawnManager.Respawn();
             }
 

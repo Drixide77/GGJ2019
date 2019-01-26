@@ -4254,6 +4254,7 @@ MonoBehaviour:
   fader: {fileID: 4320650384257223039}
   uiController: {fileID: 4320650383813500631}
   respawnManager: {fileID: 0}
+  mapRespawner: {fileID: 0}
   resultCanvas: {fileID: 4320650384148459965}
   waveObject: {fileID: 3192418857833053658}
   waveStartingPoint: {x: -40, y: 1.5, z: 2.5}
