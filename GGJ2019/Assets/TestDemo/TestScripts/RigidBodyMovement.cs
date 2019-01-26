@@ -51,7 +51,7 @@ public class RigidBodyMovement : MonoBehaviour
         conches.Add(conch);
         ++score;
         forwardSpeedFactor /= 1.5f;
-        rotationSpeedFactor *= 2.0f;
+        rotationSpeedFactor *= 1.25f;
     }
 
     public GameObject GetLastConch()
