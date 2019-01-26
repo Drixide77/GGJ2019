@@ -33,15 +33,15 @@ public class RigidBodyMovement : MonoBehaviour
     }
 
     public void ManageInput() { 
-        InputX = Input.GetAxis("Horizontal");
+        InputX = Input.GetAxis("Horizontal"+playerId);
         InputY = Input.GetAxis("Vertical");
         body.velocity = (transform.forward * InputY) * speed * Time.fixedDeltaTime;
         transform.Rotate((transform.up * InputX) * rotationSpeed * Time.fixedDeltaTime);
     }
 
     public void ManageAlternativeInput() {
-        InputX = Input.GetAxis("Horizontal");
-        InputY = (Input.GetAxis("Fire1") * forwardSpeedFactor) - (Input.GetAxis("Fire2")) / backFactor;
+        InputX = Input.GetAxis("Horizontal" + playerId);
+        InputY = (Input.GetAxis("Fire1_" + playerId) * forwardSpeedFactor) - (Input.GetAxis("Fire2_" + playerId)) / backFactor;
         body.AddForce(InputY* transform.forward *speed);
         //body.velocity += (transform.forward * InputY) * (speed) * Time.fixedDeltaTime;
         transform.Rotate((transform.up * InputX) * (rotationSpeed - rotationSpeedFactor) * Time.fixedDeltaTime);

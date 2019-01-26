@@ -152,7 +152,7 @@ public class GameController : MonoBehaviour {
 
         if (!gameRunning && resultCanvas.activeInHierarchy)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1_1") || Input.GetButtonDown("Fire1_2") || Input.GetButtonDown("Fire1_3") || Input.GetButtonDown("Fire1_4"))
             {
                 SceneManager.LoadScene("Menu");
             }
