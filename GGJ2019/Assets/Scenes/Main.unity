@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1761396, g: 0.2204407, b: 0.3027677, a: 1}
+  m_IndirectSpecularColor: {r: 0.18048559, g: 0.22595605, b: 0.307036, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2350,9 +2350,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fader: {fileID: 1529028640}
   uiController: {fileID: 573806030}
+  resultCanvas: {fileID: 0}
   nextWaveText: {fileID: 792279825}
   timerText: {fileID: 900957142}
   roundTimer: {fileID: 1822363280}
+  winnerText: {fileID: 0}
   player1: {fileID: 133224056}
   player1Active: 0
   player2: {fileID: 1100229981}
@@ -5471,7 +5473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1695409475
 Transform:
   m_ObjectHideFlags: 0
