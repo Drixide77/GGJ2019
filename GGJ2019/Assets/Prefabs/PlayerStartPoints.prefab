@@ -484,13 +484,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
-      propertyPath: playerId
-      value: 4
+      propertyPath: pause
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
-      propertyPath: pause
-      value: 1
+      propertyPath: playerId
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427186, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
@@ -625,13 +625,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
-      propertyPath: playerId
-      value: 2
+      propertyPath: pause
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
-      propertyPath: pause
-      value: 1
+      propertyPath: playerId
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427186, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
@@ -766,13 +766,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
-      propertyPath: playerId
-      value: 3
+      propertyPath: pause
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
-      propertyPath: pause
-      value: 1
+      propertyPath: playerId
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
@@ -909,6 +909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
+        type: 3}
+      propertyPath: playerId
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 709695772447427186, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
