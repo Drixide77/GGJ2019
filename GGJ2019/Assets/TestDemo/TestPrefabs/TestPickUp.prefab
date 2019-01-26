@@ -243,6 +243,21 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6908106371736839174, guid: ddf346a324bbff04890a1aaa66c431da,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908106371736839174, guid: ddf346a324bbff04890a1aaa66c431da,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908106371736839174, guid: ddf346a324bbff04890a1aaa66c431da,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf346a324bbff04890a1aaa66c431da, type: 3}
 --- !u!4 &7477493461330543617 stripped
