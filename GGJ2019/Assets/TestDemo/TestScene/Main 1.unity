@@ -327,10 +327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62847870213615440a4471952a14d552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier1maps:
+  maps:
   - {fileID: 7326714647567575844, guid: 071a5d448c7d6cb4ab9c3b12c9e28934, type: 3}
-  tier2maps: []
-  tier3maps: []
+  - {fileID: 7736818239377630041, guid: f8b5db17b62b1604bba90cf6fcb87503, type: 3}
+  - {fileID: 2907245266393052433, guid: 7556c917425bdcd41864d6153afac900, type: 3}
+  - {fileID: 5620549170522923711, guid: d26e60d36ee69c64095ec835d117ce6d, type: 3}
+  renew: 0
 --- !u!4 &218023824
 Transform:
   m_ObjectHideFlags: 0
