@@ -8,7 +8,7 @@ public class TestPlayerPick : MonoBehaviour
     private Rigidbody body;
     public GameObject conch, initialAnchor, tailOut, tailIn;
     public Transform newCapsulePos;
-    public int playerId;
+
 
     // Start is called before the first frame update
     void Start()

@@ -12,6 +12,7 @@ public class RigidBodyMovement : MonoBehaviour
     private List<GameObject> conches;
     public bool pause;
     public int score;
+    public int playerId;
 
     // Start is called before the first frame update
     void Start()
