@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour {
     public Text roundTimer;
     public Text winnerText;
 
+    public Image winnerPanel;
+
     public RigidBodyMovement player1;
     [HideInInspector]
     public bool player1Active = false;
@@ -163,19 +165,19 @@ public class GameController : MonoBehaviour {
         {
             case 1:
                 winnerText.text = "Red crab got a new home";
-                winnerText.color = colorPlayer1;
+                winnerPanel.color = colorPlayer1;
                 break;
             case 2:
                 winnerText.text = "Blue crab got a new home";
-                winnerText.color = colorPlayer2;
+                winnerPanel.color = colorPlayer2;
                 break;
             case 3:
                 winnerText.text = "Green crab got a new home";
-                winnerText.color = colorPlayer3;
+                winnerPanel.color = colorPlayer3;
                 break;
             case 4:
                 winnerText.text = "Purple crab got a new home";
-                winnerText.color = colorPlayer4;
+                winnerPanel.color = colorPlayer4;
                 break;
         }
     }
