@@ -7,12 +7,9 @@ public class RespawnManager : MonoBehaviour
     public GameObject[] players;
     private List<GameObject> spawnPoints;
 
-    private float countDown, counter;
     // Start is called before the first frame update
     void Start()
     {
-        countDown = 10.0f;
-        counter = countDown;
         spawnPoints = new List<GameObject>();
         foreach (Transform child in transform)
         {
@@ -24,12 +21,7 @@ public class RespawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        counter -= Time.deltaTime;
-        if (counter <= 0)
-        {
-            Respawn();
-            counter = countDown;
-        }
+
     }
 
     public void Respawn()
