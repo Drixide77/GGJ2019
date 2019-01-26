@@ -7,22 +7,41 @@ public class RespawnManager : MonoBehaviour
     public GameObject[] players;
     private List<GameObject> spawnPoints;
 
+    private float countDown, counter;
     // Start is called before the first frame update
     void Start()
     {
+        countDown = 10.0f;
+        counter = countDown;
+        spawnPoints = new List<GameObject>();
         foreach (Transform child in transform)
         {
             spawnPoints.Add(child.gameObject);
         }
-        for (int i = 0; i < 4; ++i)
-        {
-            int spawnPoint = Random.Range(0, spawnPoints.Count);
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        counter -= Time.deltaTime;
+        if (counter <= 0)
+        {
+            Respawn();
+            counter = countDown;
+        }
+    }
 
+    public void Respawn()
+    {      
+        for (int i = 0; i < 4; ++i)
+        {
+            int spawnPoint = Random.Range(0, spawnPoints.Count);
+            players[i].transform.position =  spawnPoints[spawnPoint].transform.position;
+            float initialRotation = Random.Range(0.0f, 360.0f);
+            players[i].transform.eulerAngles = new Vector3(0.0f, initialRotation, 0.0f);
+            spawnPoints.RemoveAt(spawnPoint);
+
+        }
     }
 }
