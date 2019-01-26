@@ -183,6 +183,7 @@ public class GameController : MonoBehaviour {
 
     void FinishGame(bool timeOut, int playerId )
     {
+        return;
         gameRunning = false;
         nextWaveText.text = "";
         timerText.text = "FINISH!";

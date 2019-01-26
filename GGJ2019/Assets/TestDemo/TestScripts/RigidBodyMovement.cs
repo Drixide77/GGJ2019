@@ -6,7 +6,7 @@ public class RigidBodyMovement : MonoBehaviour
 {
 
     private Rigidbody body;
-    private float InputX, InputY;
+    private float InputX, InputY, originalSpeedFactor, originalRotationFactor;
     private List<GameObject> conches;
     public bool pause;
     public int score, playerId;
@@ -18,7 +18,9 @@ public class RigidBodyMovement : MonoBehaviour
         score = 0;
         body = GetComponent<Rigidbody>();
         conches = new List<GameObject>();
-        pause = true; 
+        pause = true;
+        originalSpeedFactor = forwardSpeedFactor;
+        originalRotationFactor = rotationSpeedFactor;
     }
 
     // Update is called once per frame
@@ -58,5 +60,23 @@ public class RigidBodyMovement : MonoBehaviour
     {
         if (conches.Count > 0) return conches[conches.Count - 1];
         else return null;
+    }
+
+    public void CallCleanShells() {
+        for (int i = conches.Count - 1; i >= 0; --i) {
+            Destroy(conches[i]);
+        }
+        forwardSpeedFactor = originalSpeedFactor;
+        rotationSpeedFactor = originalRotationFactor;
+    }
+
+    IEnumerator CleanShells() {
+        yield return new WaitForSeconds(1.0f);
+        CallCleanShells();
+    }
+
+
+    public void CallTheShellCoroutine() {
+        StartCoroutine(CleanShells());
     }
 }
