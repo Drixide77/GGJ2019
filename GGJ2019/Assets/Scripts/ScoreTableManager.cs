@@ -29,11 +29,11 @@ public class ScoreTableManager : MonoBehaviour
         {
             star1.SetActive(true);
         }
-        else if (score >= 2)
+        if (score >= 2)
         {
             star2.SetActive(true);
         }
-        else if (score >= 3)
+        if (score >= 3)
         {
             star3.SetActive(true);
         }

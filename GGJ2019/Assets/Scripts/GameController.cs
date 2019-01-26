@@ -7,15 +7,31 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
     [Header("GameObject and Script References")]
     public Fader fader;
+    public UIController uiController;
 
     public Text nextWaveText;
     public Text timerText;
     public Text roundTimer;
 
-    // public player1;
-    // public player2;
-    // public player3;
-    // public player4;
+    public RigidBodyMovement player1;
+    [HideInInspector]
+    public bool player1Active = false;
+    int player1Score = 0;
+
+    public RigidBodyMovement player2;
+    [HideInInspector]
+    public bool player2Active = false;
+    int player2Score = 0;
+
+    public RigidBodyMovement player3;
+    [HideInInspector]
+    public bool player3Active = false;
+    int player3Score = 0;
+
+    public RigidBodyMovement player4;
+    [HideInInspector]
+    public bool player4Active = false;
+    int player4Score = 0;
 
     [Header("Adjustable Values")]
     public int initialCountdown = 3;
@@ -41,7 +57,7 @@ public class GameController : MonoBehaviour {
             roundTimer.text = "Round: " + (roundNumber + 1);
             if (roundNumber >= numberOfRounds)
             {
-                FinishGame(true);
+                FinishGame(true, -1);
                 return;
             }
             currentTime = this.roundTimers[roundNumber];
@@ -60,7 +76,38 @@ public class GameController : MonoBehaviour {
     void Update()
     {
         // Check player score
-
+        if (player1Active && player1.score > player1Score)
+        {
+            uiController.SetScoreForPlayer(player1.score, 1);
+            if (player1.score == 3)
+            {
+                FinishGame(false, 1);
+            }
+        }
+        if (player2Active && player2.score > player2Score)
+        {
+            uiController.SetScoreForPlayer(player2.score, 2);
+            if (player2.score == 3)
+            {
+                FinishGame(false, 2);
+            }
+        }
+        if (player3Active && player3.score > player3Score)
+        {
+            uiController.SetScoreForPlayer(player3.score, 3);
+            if (player3.score == 3)
+            {
+                FinishGame(false, 3);
+            }
+        }
+        if (player4Active && player4.score > player4Score)
+        {
+            uiController.SetScoreForPlayer(player4.score, 4);
+            if (player4.score == 3)
+            {
+                FinishGame(false, 4);
+            }
+        }
     }
 
     void Unfade()
@@ -83,9 +130,13 @@ public class GameController : MonoBehaviour {
         currentTime = roundTimers[0];
     }
 
-    void FinishGame(bool timeOut)
+    void FinishGame(bool timeOut, int playerId )
     {
         // TODO 
+        player1.pause = true;
+        player2.pause = true;
+        player3.pause = true;
+        player4.pause = true;
 
     }
 
