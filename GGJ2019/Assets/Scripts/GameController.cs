@@ -8,10 +8,12 @@ public class GameController : MonoBehaviour {
     [Header("GameObject and Script References")]
     public Fader fader;
     public UIController uiController;
+    public GameObject resultCanvas;
 
     public Text nextWaveText;
     public Text timerText;
     public Text roundTimer;
+    public Text winnerText;
 
     public RigidBodyMovement player1;
     [HideInInspector]
@@ -132,11 +134,16 @@ public class GameController : MonoBehaviour {
 
     void FinishGame(bool timeOut, int playerId )
     {
+        gameRunning = false;
+        nextWaveText.text = "";
+        timerText.text = "FINISH!";
+
         // TODO 
         player1.pause = true;
         player2.pause = true;
         player3.pause = true;
         player4.pause = true;
+
 
     }
 
@@ -144,6 +151,10 @@ public class GameController : MonoBehaviour {
     {
         StartCoroutine(StartTimerCoroutine(() => {
             gameRunning = true;
+            player1.pause = false;
+            player2.pause = false;
+            player3.pause = false;
+            player4.pause = false;
         }));
     }
 
@@ -184,6 +195,7 @@ public class GameController : MonoBehaviour {
             if (currentTime <= 0) {
                 timerText.text = "WAVE!";
                 nextRoundCallback();
+                yield return new WaitForSeconds(3.0f);
             }
         }
     }
