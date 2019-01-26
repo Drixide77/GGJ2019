@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
@@ -38,6 +39,11 @@ public class GameController : MonoBehaviour {
     [Header("Adjustable Values")]
     public int initialCountdown = 3;
     public int numberOfRounds = 5;
+
+    public Color colorPlayer1;
+    public Color colorPlayer2;
+    public Color colorPlayer3;
+    public Color colorPlayer4;
 
     int currentTime = 20;
 
@@ -110,6 +116,14 @@ public class GameController : MonoBehaviour {
                 FinishGame(false, 4);
             }
         }
+
+        if (!gameRunning && resultCanvas.activeInHierarchy)
+        {
+            if (Input.GetButton("Fire1"))
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }
     }
 
     void Unfade()
@@ -144,7 +158,26 @@ public class GameController : MonoBehaviour {
         player3.pause = true;
         player4.pause = true;
 
-
+        resultCanvas.SetActive(true);
+        switch (playerId)
+        {
+            case 1:
+                winnerText.text = "Red crab got a new home";
+                winnerText.color = colorPlayer1;
+                break;
+            case 2:
+                winnerText.text = "Blue crab got a new home";
+                winnerText.color = colorPlayer2;
+                break;
+            case 3:
+                winnerText.text = "Green crab got a new home";
+                winnerText.color = colorPlayer3;
+                break;
+            case 4:
+                winnerText.text = "Purple crab got a new home";
+                winnerText.color = colorPlayer4;
+                break;
+        }
     }
 
     void StartTimer()
