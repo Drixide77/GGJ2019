@@ -36,7 +36,11 @@ public class MapRespawner : MonoBehaviour
         }
         int randomMap = Random.Range(0, maps.Length);
         GameObject map = maps[randomMap];
-        float initialRotation = Random.Range(0.0f, 360.0f);
-        Instantiate(map, new Vector3(0.0f,0.0f,0.0f), new Quaternion(0.0f, initialRotation, 0.0f,1.0f));
+        MapRotableCheck mrc = map.GetComponent<MapRotableCheck>();
+        if (mrc != null && mrc.IsRotable)
+        {
+            float initialRotation = Random.Range(0.0f, 360.0f);
+            Instantiate(map, new Vector3(0.0f, 0.0f, 0.0f), new Quaternion(0.0f, initialRotation, 0.0f, 1.0f));
+        }
     }
 }
