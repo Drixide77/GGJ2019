@@ -14,7 +14,8 @@ public class PickUpInstantiator : MonoBehaviour
         float randX = Random.Range(0.0f, 360.0f);
         float randY = Random.Range(0.0f, 360.0f);
         float randZ = Random.Range(0.0f, 360.0f);
-        Instantiate(pickups[type], transform.position, new Quaternion(randX, randY, randZ, 1.0f));
+        GameObject pickUp = Instantiate(pickups[type], transform.position, new Quaternion(randX, randY, randZ, 1.0f));
+        pickUp.transform.parent = transform.parent;
     }
 
     // Update is called once per frame

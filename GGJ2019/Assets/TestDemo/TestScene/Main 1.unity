@@ -327,10 +327,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62847870213615440a4471952a14d552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier1maps:
+  maps:
   - {fileID: 7326714647567575844, guid: 071a5d448c7d6cb4ab9c3b12c9e28934, type: 3}
-  tier2maps: []
-  tier3maps: []
+  - {fileID: 7736818239377630041, guid: f8b5db17b62b1604bba90cf6fcb87503, type: 3}
+  - {fileID: 2907245266393052433, guid: 7556c917425bdcd41864d6153afac900, type: 3}
+  - {fileID: 5620549170522923711, guid: d26e60d36ee69c64095ec835d117ce6d, type: 3}
+  - {fileID: 7437718944202852529, guid: 10e7cc45ff56d1d4bb4f253072dbe6cc, type: 3}
+  - {fileID: 6051727466423605806, guid: aef65922437a73a41a7da1a4247ab4ac, type: 3}
+  - {fileID: 2990076308696287195, guid: 8d6dc0ef2d7fb5c47860a7a3a90b313d, type: 3}
+  - {fileID: 6806423926736393446, guid: 6723a80699166b54aa177398453c187b, type: 3}
+  - {fileID: 2972943733337784333, guid: 38b51d120ea0cf249a58e26536646432, type: 3}
+  - {fileID: 528733314470682758, guid: 820bb1d97b9110147a5a3a2757ce8c98, type: 3}
+  renew: 0
 --- !u!4 &218023824
 Transform:
   m_ObjectHideFlags: 0
