@@ -10,7 +10,6 @@ public class MapRespawner : MonoBehaviour
     private List<GameObject> availableMaps;
     private GameObject currentMap;
 
-    float counter = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +20,7 @@ public class MapRespawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        counter -= Time.deltaTime;
-        if (counter <= 0.0f) {
-            ReMap();
-            counter = 5.0f;
-        }
+        
     }
 
     public void ReMap() {
