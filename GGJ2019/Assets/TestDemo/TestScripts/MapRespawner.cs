@@ -30,7 +30,7 @@ public class MapRespawner : MonoBehaviour
 
     public void ReMap() {
         if (currentMap != null) Destroy(currentMap);      
-        int randomMap = Random.Range(0, availableMaps.Count);
+        int randomMap = Random.Range(0, (availableMaps.Count-1));
         GameObject map = availableMaps[randomMap];
         currentMap = map;
         MapRotableCheck mrc = map.GetComponent<MapRotableCheck>();
