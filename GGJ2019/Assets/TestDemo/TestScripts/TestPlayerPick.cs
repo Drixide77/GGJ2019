@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestPlayerPick : MonoBehaviour
 {
-    private RigidBodyMovement rbm;
+    public RigidBodyMovement rbm;
     private Rigidbody body;
     public GameObject conch, initialAnchor, tailOut, tailIn;
     public Transform newCapsulePos;
@@ -14,7 +14,6 @@ public class TestPlayerPick : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
-        rbm = transform.parent.gameObject.GetComponent<RigidBodyMovement>();
     }
 
     // Update is called once per frame
@@ -27,7 +26,6 @@ public class TestPlayerPick : MonoBehaviour
     {
         if (other.gameObject.tag == "PickUpPoint")
         {
-            Debug.Log("Entered");
             GameObject target = other.gameObject;
             PickUpScript pus = target.GetComponent<PickUpScript>();
             if (pus != null) {
@@ -36,7 +34,7 @@ public class TestPlayerPick : MonoBehaviour
                     tailIn.SetActive(true);
                     gameObject.transform.position = newCapsulePos.position;
                 }
-                Destroy(target);
+                Destroy(pus.GetRoot());
                 GameObject lastConch = rbm.GetLastConch();
                 Transform conchAnchor;
                 if (lastConch == null) conchAnchor = initialAnchor.transform;

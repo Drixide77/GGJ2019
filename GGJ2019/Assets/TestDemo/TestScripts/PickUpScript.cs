@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpScript : MonoBehaviour
 {
-
+    public GameObject root;
     public Material highlightmat, unhighlightmat;
     // Start is called before the first frame update
     void Start()
@@ -33,5 +33,9 @@ public class PickUpScript : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material = unhighlightmat;
         }
+    }
+
+    public GameObject GetRoot() {
+        return root;
     }
 }

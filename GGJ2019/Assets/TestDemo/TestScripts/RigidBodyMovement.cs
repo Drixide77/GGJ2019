@@ -6,13 +6,11 @@ public class RigidBodyMovement : MonoBehaviour
 {
 
     private Rigidbody body;
-    public float speed;
-    public float rotationSpeed;
     private float InputX, InputY;
     private List<GameObject> conches;
     public bool pause;
-    public int score;
-    public int playerId;
+    public int score, playerId;
+    public float backFactor, forwardSpeedFactor, rotationSpeedFactor, speed, rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +25,12 @@ public class RigidBodyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pause) ManageInput();       
+
+        if (!pause) ManageAlternativeInput();
+        else {
+            InputX = 0.0f;
+            InputY = 0.0f;
+        }
     }
 
     public void ManageInput() { 
@@ -37,9 +40,19 @@ public class RigidBodyMovement : MonoBehaviour
         transform.Rotate((transform.up * InputX) * rotationSpeed * Time.fixedDeltaTime);
     }
 
+    public void ManageAlternativeInput() {
+        InputX = Input.GetAxis("Horizontal");
+        InputY = (Input.GetAxis("Fire1") * forwardSpeedFactor) - (Input.GetAxis("Fire2")) / backFactor;
+        body.AddForce(InputY* transform.forward *speed);
+        //body.velocity += (transform.forward * InputY) * (speed) * Time.fixedDeltaTime;
+        transform.Rotate((transform.up * InputX) * (rotationSpeed - rotationSpeedFactor) * Time.fixedDeltaTime);
+    }
+
     public void AddConch(GameObject conch) {
         conches.Add(conch);
         ++score;
+        forwardSpeedFactor /= 1.5f;
+        rotationSpeedFactor *= 2.0f;
     }
 
     public GameObject GetLastConch()
