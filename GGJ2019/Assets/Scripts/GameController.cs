@@ -9,7 +9,11 @@ public class GameController : MonoBehaviour {
     [Header("GameObject and Script References")]
     public Fader fader;
     public UIController uiController;
+    public RespawnManager respawnManager;
     public GameObject resultCanvas;
+    public GameObject waveObject;
+    public Vector3 waveStartingPoint;
+    public Vector3 waveEndPoint;
 
     public Text nextWaveText;
     public Text timerText;
@@ -80,6 +84,33 @@ public class GameController : MonoBehaviour {
 
         Unfade();
         StartTimer();
+    }
+
+    void DoWave()
+    {
+        StartCoroutine(DoWaveCoroutine());
+    }
+
+    IEnumerator DoWaveCoroutine()
+    {
+        float duration = 4.0f;
+        float currentTime = 0.0f;
+        bool spawnTriggered = false;
+
+        while (currentTime < duration)
+        {
+            waveObject.transform.position = new Vector3(Mathf.Lerp(waveStartingPoint.x, waveEndPoint.x, currentTime / duration),
+                Mathf.Lerp(waveStartingPoint.y, waveEndPoint.y, currentTime / duration), Mathf.Lerp(waveStartingPoint.z, waveEndPoint.z, currentTime / duration));
+
+            if (!spawnTriggered && (currentTime / duration) >= 0.5f)
+            {
+                spawnTriggered = true;
+                respawnManager.Respawn();
+            }
+
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
     }
 
     // Update is called once per frame
@@ -229,6 +260,7 @@ public class GameController : MonoBehaviour {
             timerText.text = currentTime+"";
             if (currentTime <= 0) {
                 timerText.text = "WAVE!";
+                this.DoWave();
                 nextRoundCallback();
                 yield return new WaitForSeconds(3.0f);
             }
