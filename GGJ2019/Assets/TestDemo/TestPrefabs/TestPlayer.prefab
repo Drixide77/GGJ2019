@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 709695772447427186}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &105370280
 MeshFilter:
@@ -123,6 +123,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conch: {fileID: 5978547601051854035, guid: 470b9ae93812eda45a2e8b7b17142554, type: 3}
+  initialAnchor: {fileID: 2000868917}
+--- !u!1 &2000868917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000868918}
+  m_Layer: 0
+  m_Name: Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2000868918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000868917}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.75}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 709695772447427186}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709695772340921056
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 709695772340921063}
+  - {fileID: 2000868918}
   - {fileID: 105370277}
   - {fileID: 709695771045684068}
   m_Father: {fileID: 0}
@@ -340,6 +372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 200
   rotationSpeed: 25
+  pause: 0
+  score: 0
 --- !u!1001 &709695770868309916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 183876856, guid: db63181edf881a549b73adcadd701e78, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 183876856, guid: db63181edf881a549b73adcadd701e78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

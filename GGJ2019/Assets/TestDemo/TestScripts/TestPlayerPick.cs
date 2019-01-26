@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class TestPlayerPick : MonoBehaviour
 {
-
+    private RigidBodyMovement rbm;
     private Rigidbody body;
-    public GameObject conch;
+    public GameObject conch, initialAnchor, tailOut, tailIn;
+    public Transform newCapsulePos;
+    public int playerId;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        rbm = transform.parent.gameObject.GetComponent<RigidBodyMovement>();
     }
 
     // Update is called once per frame
@@ -27,24 +31,26 @@ public class TestPlayerPick : MonoBehaviour
             GameObject target = other.gameObject;
             PickUpScript pus = target.GetComponent<PickUpScript>();
             if (pus != null) {
+                if (tailOut != null) {
+                    Destroy(tailOut);
+                    tailIn.SetActive(true);
+                    gameObject.transform.position = newCapsulePos.position;
+                }
                 Destroy(target);
-                GameObject CreatedConch = Instantiate(conch, transform);
-                CreatedConch.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+                GameObject lastConch = rbm.GetLastConch();
+                Transform conchAnchor;
+                if (lastConch == null) conchAnchor = initialAnchor.transform;
+                else {
+                    conchAnchor = lastConch.GetComponent<ConchScript>().GetAnchor().transform;
+                }
+                GameObject addedConch = Instantiate(conch, conchAnchor.position, conchAnchor.rotation);
+                addedConch.transform.parent = conchAnchor;
+                rbm.AddConch(addedConch);
             }
         }
     }
 
-    /*private void OnTriggerExit(Collider other) {
-        if (other.gameObject.tag == "PickUpPoint")
-        {
-            PickUpScript pus = other.gameObject.GetComponent<PickUpScript>();
-            if (pus != null)
-            {
-                Debug.Log("GotScript");
-                pus.Unhighlight();
-            }
-        }
-    }*/
+    
 
     public void DoPickUp()
     {

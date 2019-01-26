@@ -10,16 +10,26 @@ public class RigidBodyMovement : MonoBehaviour
     public float rotationSpeed;
     private float InputX, InputY;
     private List<GameObject> conches;
+    public bool pause;
+    public int score;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         body = GetComponent<Rigidbody>();
+        conches = new List<GameObject>();
+        pause = false;
+        //pause = true; Uncomment Later
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!pause) ManageInput();       
+    }
+
+    public void ManageInput() { 
         InputX = Input.GetAxis("Horizontal");
         InputY = Input.GetAxis("Vertical");
         body.velocity = (transform.forward * InputY) * speed * Time.fixedDeltaTime;
@@ -28,10 +38,12 @@ public class RigidBodyMovement : MonoBehaviour
 
     public void AddConch(GameObject conch) {
         conches.Add(conch);
+        ++score;
     }
 
     public GameObject GetLastConch()
     {
-        return null; // if (conches.Count > 0) return conches.ToArray[conches.Count-1];   <--- Wasn't compiling. Please fix, Max
+        if (conches.Count > 0) return conches[conches.Count - 1];
+        else return null;
     }
 }
