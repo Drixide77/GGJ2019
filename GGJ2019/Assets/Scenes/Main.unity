@@ -511,6 +511,11 @@ PrefabInstance:
       propertyPath: pause
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 709695772447427184, guid: a589beea8d139b7419c63c8967275974,
+        type: 3}
+      propertyPath: backFactor
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 709695772447427186, guid: a589beea8d139b7419c63c8967275974,
         type: 3}
       propertyPath: m_LocalPosition.x
