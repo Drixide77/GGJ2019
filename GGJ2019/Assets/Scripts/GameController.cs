@@ -295,6 +295,7 @@ public class GameController : MonoBehaviour {
         player4.pause = false;
 
         roundNumber = 0;
+        currentTime = 1;
     }
 
     void Unfade()
@@ -413,6 +414,10 @@ public class GameController : MonoBehaviour {
                 if (currentTime <= 3)
                 {
                     timerText.color = Color.red;
+                }
+                if (currentTime == 2)
+                {
+                    soundManager.PlayWaveSound();
                 }
                 timerText.text = currentTime + "";
                 if (currentTime <= 0)
