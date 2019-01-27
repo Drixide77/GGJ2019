@@ -1782,6 +1782,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameMusic: {fileID: 0}
   StarSounds: {fileID: 0}
+  WaveSounds: {fileID: 0}
+  StartRoundSounds: {fileID: 0}
 --- !u!4 &1741154596
 Transform:
   m_ObjectHideFlags: 0
