@@ -6,10 +6,9 @@ public class TestPlayerPick : MonoBehaviour
 {
     public RigidBodyMovement rbm;
     private Rigidbody body;
-    public GameObject conch, cup, can, initialAnchor, tailOut, tailIn;
+    public GameObject conch, cup, can, initialAnchor, tailOut, tailIn, pickParticles;
     public Transform newCapsulePos;
     private AudioSource playerAudioSource;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +34,7 @@ public class TestPlayerPick : MonoBehaviour
             PickUpScript pus = target.GetComponent<PickUpScript>();
             if (pus != null) {
                 playerAudioSource.Play();
+                Instantiate(pickParticles, target.transform.position,Quaternion.identity);
                 if (tailOut.activeInHierarchy) {
                     tailOut.SetActive(false);
                     tailIn.SetActive(true);
