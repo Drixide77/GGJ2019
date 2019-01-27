@@ -4449,8 +4449,8 @@ MonoBehaviour:
   mapRespawner: {fileID: 0}
   resultCanvas: {fileID: 4320650384148459965}
   waveObject: {fileID: 3192418857833053658}
-  waveStartingPoint: {x: -40, y: 1.5, z: 2.5}
-  waveEndPoint: {x: 40, y: 1.5, z: 2.5}
+  waveStartingPoint: {x: -40, y: 5, z: 2.5}
+  waveEndPoint: {x: 40, y: 5, z: 2.5}
   nextWaveText: {fileID: 4320650383594713096}
   timerText: {fileID: 4320650383486339279}
   roundTimer: {fileID: 4320650382565393801}
@@ -5851,20 +5851,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave
       objectReference: {fileID: 0}
-    - target: {fileID: 1710181111261938905, guid: 6d64c8e3694428d41be1a197581d7a4c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 3456653977892570398, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.017
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 3456653977892570398, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3456653977892570398, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}
@@ -5930,31 +5925,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2775962953554278250, guid: 6d64c8e3694428d41be1a197581d7a4c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1871452731043660670, guid: 6d64c8e3694428d41be1a197581d7a4c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157201761739003416, guid: 6d64c8e3694428d41be1a197581d7a4c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016351452843621621, guid: 6d64c8e3694428d41be1a197581d7a4c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491505204954311190, guid: 6d64c8e3694428d41be1a197581d7a4c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2558171165762852873, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}

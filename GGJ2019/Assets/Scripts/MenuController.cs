@@ -43,6 +43,7 @@ public class MenuController : MonoBehaviour
                 howToCanvas.SetActive(false);
             }
         }
+        
     }
 
     public void OnStartGamePressed()
