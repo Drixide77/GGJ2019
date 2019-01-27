@@ -15,6 +15,7 @@ public class TestPlayerPick : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         playerAudioSource = rbm.gameObject.GetComponent<AudioSource>();
+        initialAnchor = transform.parent.Find("InitialAnchor").gameObject;
     }
 
     // Update is called once per frame
@@ -59,9 +60,10 @@ public class TestPlayerPick : MonoBehaviour
                 Destroy(pus.GetRoot());
                 GameObject lastShell = rbm.GetLastConch();
                 Transform conchAnchor;
-                if (lastShell == null) conchAnchor = initialAnchor.transform;
-                else {
-                    conchAnchor = lastShell.GetComponent<ConchScript>().GetAnchor().transform;
+                if (lastShell != null) conchAnchor = lastShell.GetComponent<ConchScript>().GetAnchor().transform;
+                else
+                {
+                    conchAnchor = initialAnchor.transform;
                 }
                 GameObject addedConch = Instantiate(toSpawn, conchAnchor.position, conchAnchor.rotation);
                 addedConch.transform.parent = conchAnchor;

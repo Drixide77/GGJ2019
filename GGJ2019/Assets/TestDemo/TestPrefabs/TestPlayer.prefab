@@ -126,7 +126,7 @@ MonoBehaviour:
   conch: {fileID: 5978547601051854035, guid: 470b9ae93812eda45a2e8b7b17142554, type: 3}
   cup: {fileID: 5978547601051854035, guid: 01785d3749f18964ea9a76d7d078518f, type: 3}
   can: {fileID: 5978547601051854035, guid: 54611cd57b3b5f247bc9dbf2c891549e, type: 3}
-  initialAnchor: {fileID: 510395777}
+  initialAnchor: {fileID: 2000868917}
   tailOut: {fileID: 709695771111057233}
   tailIn: {fileID: 709695770986672531}
   newCapsulePos: {fileID: 931511230}
@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000868917}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.656}
+  m_LocalPosition: {x: 0, y: 0, z: -0.259}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1806679233253079414}
@@ -1539,6 +1539,7 @@ MonoBehaviour:
   rotationSpeedFactor: 15
   speed: 25
   rotationSpeed: 120
+  animator: {fileID: 0}
 --- !u!1 &2561483041343981532
 GameObject:
   m_ObjectHideFlags: 0
