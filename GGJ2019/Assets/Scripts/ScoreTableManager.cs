@@ -25,15 +25,15 @@ public class ScoreTableManager : MonoBehaviour
 
     public void SetScore(int score)
     {
-        if (score >= 1)
+        if (score >= 3)
         {
             star1.SetActive(true);
         }
-        if (score >= 2)
+        if (score >= 6)
         {
             star2.SetActive(true);
         }
-        if (score >= 3)
+        if (score >= 9)
         {
             star3.SetActive(true);
         }

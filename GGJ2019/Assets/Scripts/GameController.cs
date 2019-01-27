@@ -72,10 +72,10 @@ public class GameController : MonoBehaviour {
             roundTimer.text = "Round: " + (roundNumber + 1);
             if (roundNumber >= numberOfRounds)
             {
-                FinishGame(true, -1);
-                return;
+                System.Random rnd = new System.Random();
+                currentTime = rnd.Next(5, 15);
             }
-            currentTime = this.roundTimers[roundNumber];
+            else currentTime = this.roundTimers[roundNumber];
         };
 
         nextWaveText.text = "";
@@ -121,8 +121,13 @@ public class GameController : MonoBehaviour {
         // Check player score
         if (player1Active && player1.score > player1Score)
         {
+            player1Score = player1.score;
+            if (player1.score % 3 == 0)
+            {
+                player1.CallCleanShells();
+            }
             uiController.SetScoreForPlayer(player1.score, 1);
-            if (player1.score == 3)
+            if (player1.score == 9)
             {
                 FinishGame(false, 1);
             }
@@ -172,10 +177,13 @@ public class GameController : MonoBehaviour {
         roundTimers = new int[numberOfRounds];
 
         // TODO - Proper generation
+        System.Random rnd = new System.Random();
         for (int i = 0; i < numberOfRounds; ++i)
         {
-            System.Random rnd = new System.Random();
-            roundTimers[i] = rnd.Next(15, 20);
+            if (i <= 0) roundTimers[i] = 20;
+            else if (i == 1) roundTimers[i] = rnd.Next(10, 20);
+            else if (i == 2) roundTimers[i] = rnd.Next(10, 15);
+            else if (i >= 3) roundTimers[i] = rnd.Next(5, 15);
         }
 
         currentTime = roundTimers[0];
@@ -183,7 +191,6 @@ public class GameController : MonoBehaviour {
 
     void FinishGame(bool timeOut, int playerId )
     {
-        return;
         gameRunning = false;
         nextWaveText.text = "";
         timerText.text = "FINISH!";
@@ -231,6 +238,10 @@ public class GameController : MonoBehaviour {
     {
         int countdown = initialCountdown;
         yield return new WaitForSeconds(2.0f);
+
+        timerText.text = "GO!";
+        roundTimer.text = "Round: " + (roundNumber + 1);
+        /*
         nextWaveText.text = "Game begins in";
         timerText.text = ""+countdown;
         while (countdown > 0)
@@ -245,6 +256,7 @@ public class GameController : MonoBehaviour {
             else timerText.text = "" + countdown;
             // TODO - Play beep sound for timer
         }
+        */
 
         callback();
         yield return new WaitForSeconds(0.5f);

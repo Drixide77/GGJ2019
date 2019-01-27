@@ -12,6 +12,8 @@ public class RigidBodyMovement : MonoBehaviour
     public int score, playerId;
     public float backFactor, forwardSpeedFactor, rotationSpeedFactor, speed, rotationSpeed;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,13 @@ public class RigidBodyMovement : MonoBehaviour
         pause = true;
         originalSpeedFactor = forwardSpeedFactor;
         originalRotationFactor = rotationSpeedFactor;
+
+        if (animator != null) animator.speed = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (!pause) ManageAlternativeInput();
         else {
             InputX = 0.0f;
@@ -47,6 +50,11 @@ public class RigidBodyMovement : MonoBehaviour
         body.AddForce(InputY* transform.forward *speed);
         //body.velocity += (transform.forward * InputY) * (speed) * Time.fixedDeltaTime;
         transform.Rotate((transform.up * InputX) * (rotationSpeed - rotationSpeedFactor) * Time.fixedDeltaTime);
+
+        float mag = Mathf.Abs(body.velocity.magnitude);
+        if (Mathf.Abs(InputX) > 0.2f) mag += 0.5f;
+        // Debug.Log("Velocity Magnitude: "+ mag);
+        animator.speed = Mathf.Min(1.0f, mag);
     }
 
     public void AddConch(GameObject conch) {
