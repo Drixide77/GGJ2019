@@ -65,6 +65,10 @@ public class GameController : MonoBehaviour {
 
     Action nextRoundCallback;
 
+    bool exitMenuOpened = false;
+
+    public GameObject BackToMenu;
+
     // Start is called before the first frame update
     void Start() {
         GenerateRoundTimes();
@@ -199,6 +203,39 @@ public class GameController : MonoBehaviour {
                 SceneManager.LoadScene("Menu");
             }
         }
+
+        if (Input.GetButtonDown("Start"))
+        {
+            if (!exitMenuOpened && gameRunning)
+            {
+                BackToMenu.SetActive(true);
+                exitMenuOpened = true;
+                gameRunning = false;
+                player1.pause = true;
+                player2.pause = true;
+                player3.pause = true;
+                player4.pause = true;
+            }
+        }
+
+
+        if (exitMenuOpened)
+        {
+            if (Input.GetButtonDown("Fire1_1") || Input.GetButtonDown("Fire1_2") || Input.GetButtonDown("Fire1_3") || Input.GetButtonDown("Fire1_4"))
+            {
+                SceneManager.LoadScene("Menu");
+            }
+            if (Input.GetButtonDown("Fire2_1") || Input.GetButtonDown("Fire2_2") || Input.GetButtonDown("Fire2_3") || Input.GetButtonDown("Fire2_4"))
+            {
+                BackToMenu.SetActive(false);
+                exitMenuOpened = false;
+                gameRunning = true;
+                player1.pause = false;
+                player2.pause = false;
+                player3.pause = false;
+                player4.pause = false;
+            }
+        }
     }
 
     IEnumerator DoWinStar(int playerId)
@@ -322,17 +359,22 @@ public class GameController : MonoBehaviour {
 
     IEnumerator RoundTimerCoroutine()
     {
-        while (gameRunning)
+        while (true)
         {
-            yield return new WaitForSeconds(1.0f);
-            --currentTime;
-            timerText.text = currentTime+"";
-            if (currentTime <= 0) {
-                timerText.text = "WAVE!";
-                this.DoWave();
-                nextRoundCallback();
-                yield return new WaitForSeconds(3.0f);
+            while (gameRunning)
+            {
+                yield return new WaitForSeconds(1.0f);
+                --currentTime;
+                timerText.text = currentTime + "";
+                if (currentTime <= 0)
+                {
+                    timerText.text = "WAVE!";
+                    this.DoWave();
+                    nextRoundCallback();
+                    yield return new WaitForSeconds(3.0f);
+                }
             }
+            yield return null;
         }
     }
 }
