@@ -71,6 +71,10 @@ public class GameController : MonoBehaviour {
 
     public SoundManager soundManager;
 
+    bool speedUp = false;
+
+    bool finishedGame = false;
+
     // Start is called before the first frame update
     void Start() {
         GenerateRoundTimes();
@@ -78,6 +82,7 @@ public class GameController : MonoBehaviour {
         {
             ++roundNumber;
             roundTimer.text = "Round: " + (roundNumber + 1);
+            timerText.color = Color.black;
             if (roundNumber >= numberOfRounds)
             {
                 System.Random rnd = new System.Random();
@@ -133,6 +138,12 @@ public class GameController : MonoBehaviour {
         // Check player score
         if (player1Active && player1.score > player1Score)
         {
+            if (player1.score == 8  && !speedUp)
+            {
+                speedUp = true;
+                soundManager.PlaySpeedUpMusic();
+            }
+
             player1Score = player1.score;
             if (player1.score % 3 == 0)
             {
@@ -142,11 +153,18 @@ public class GameController : MonoBehaviour {
             uiController.SetScoreForPlayer(player1.score, 1);
             if (player1.score == 9)
             {
+                finishedGame = true;
                 FinishGame(false, 1);
             }
         }
         if (player2Active && player2.score > player2Score)
         {
+            if (player2.score == 8 && !speedUp)
+            {
+                speedUp = true;
+                soundManager.PlaySpeedUpMusic();
+            }
+
             player2Score = player2.score;
             if (player2.score % 3 == 0)
             {
@@ -156,11 +174,18 @@ public class GameController : MonoBehaviour {
             uiController.SetScoreForPlayer(player2.score, 2);
             if (player2.score == 9)
             {
+                finishedGame = true;
                 FinishGame(false, 2);
             }
         }
         if (player3Active && player3.score > player3Score)
         {
+            if (player3.score == 8 && !speedUp)
+            {
+                speedUp = true;
+                soundManager.PlaySpeedUpMusic();
+            }
+
             player3Score = player3.score;
             if (player3.score % 3 == 0)
             {
@@ -170,11 +195,18 @@ public class GameController : MonoBehaviour {
             uiController.SetScoreForPlayer(player3.score, 3);
             if (player3.score == 9)
             {
+                finishedGame = true;
                 FinishGame(false, 3);
             }
         }
         if (player4Active && player4.score > player4Score)
         {
+            if (player4.score == 8 && !speedUp)
+            {
+                speedUp = true;
+                soundManager.PlaySpeedUpMusic();
+            }
+
             player4Score = player4.score;
             if (player4.score % 3 == 0)
             {
@@ -184,6 +216,7 @@ public class GameController : MonoBehaviour {
             uiController.SetScoreForPlayer(player4.score, 4);
             if (player4.score == 9)
             {
+                finishedGame = true;
                 FinishGame(false, 4);
             }
         }
@@ -242,6 +275,11 @@ public class GameController : MonoBehaviour {
 
     IEnumerator DoWinStar(int playerId)
     {
+        if (!finishedGame) soundManager.PlayStarSound();
+
+        roundTimer.text = "";
+        timerText.text = "";
+
         // Play Fanfare Sound
         yield return new WaitForSeconds(2.0f);
         if (player1.gameObject.activeInHierarchy) player1.CallCleanShells();
@@ -287,6 +325,9 @@ public class GameController : MonoBehaviour {
         gameRunning = false;
         nextWaveText.text = "";
         timerText.text = "FINISH!";
+
+        soundManager.StopMusic();
+        soundManager.PlayWinSound();
 
         // TODO 
         player1.pause = true;
@@ -369,9 +410,14 @@ public class GameController : MonoBehaviour {
             {
                 yield return new WaitForSeconds(1.0f);
                 --currentTime;
+                if (currentTime <= 3)
+                {
+                    timerText.color = Color.red;
+                }
                 timerText.text = currentTime + "";
                 if (currentTime <= 0)
                 {
+                    timerText.color = Color.red;
                     timerText.text = "WAVE!";
                     this.DoWave();
                     nextRoundCallback();

@@ -23,6 +23,10 @@ public class SoundManager : MonoBehaviour
         
     }
 
+    public void StopMusic()
+    {
+        GameMusic.StopMusic();
+    }
 
     public void PlayIngameMusic() {
         GameMusic.PlayDefaultMusic();

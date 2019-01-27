@@ -19,6 +19,11 @@ public class GameMusicController : MonoBehaviour
         
     }
 
+    public void StopMusic()
+    {
+        audioSource.Stop();
+    }
+
     public void PlayDefaultMusic() {
         audioSource.Stop();
         audioSource.clip = clip[0];
