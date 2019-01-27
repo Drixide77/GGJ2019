@@ -134,24 +134,39 @@ public class GameController : MonoBehaviour {
         }
         if (player2Active && player2.score > player2Score)
         {
+            player2Score = player2.score;
+            if (player2.score % 3 == 0)
+            {
+                player2.CallCleanShells();
+            }
             uiController.SetScoreForPlayer(player2.score, 2);
-            if (player2.score == 3)
+            if (player1.score == 9)
             {
                 FinishGame(false, 2);
             }
         }
         if (player3Active && player3.score > player3Score)
         {
+            player3Score = player3.score;
+            if (player3.score % 3 == 0)
+            {
+                player3.CallCleanShells();
+            }
             uiController.SetScoreForPlayer(player3.score, 3);
-            if (player3.score == 3)
+            if (player3.score == 9)
             {
                 FinishGame(false, 3);
             }
         }
         if (player4Active && player4.score > player4Score)
         {
+            player4Score = player4.score;
+            if (player4.score % 3 == 0)
+            {
+                player4.CallCleanShells();
+            }
             uiController.SetScoreForPlayer(player4.score, 4);
-            if (player4.score == 3)
+            if (player4.score == 9)
             {
                 FinishGame(false, 4);
             }

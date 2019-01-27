@@ -30,7 +30,7 @@ public class MenuController : MonoBehaviour
     {
         if (howToCanvas.activeInHierarchy)
         {
-            if (Input.GetButtonDown("Fire2_1"))
+            if (Input.GetButtonDown("Fire2_1") || Input.GetButtonDown("Fire2_2") || Input.GetButtonDown("Fire2_3") || Input.GetButtonDown("Fire2_4"))
             {
                 play.interactable = true;
                 howTo.interactable = true;
