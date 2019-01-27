@@ -532,6 +532,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5558aa0a7fee7cd4bace4cc4196e3ac6, type: 3}
+--- !u!4 &641758777 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4227445462012469716, guid: 518af12fd13d5724c940fb1e7c8d91ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1930918343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &668964663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2572,6 +2578,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1129282615, guid: a022b866cbd1717429f5965073d74053, type: 3}
+      propertyPath: CollisionModule.plane0
+      value: 
+      objectReference: {fileID: 641758777}
+    - target: {fileID: 6969082211674556498, guid: a022b866cbd1717429f5965073d74053,
+        type: 3}
+      propertyPath: CollisionModule.plane0
+      value: 
+      objectReference: {fileID: 641758777}
+    - target: {fileID: 6969082211710749563, guid: a022b866cbd1717429f5965073d74053,
+        type: 3}
+      propertyPath: CollisionModule.plane0
+      value: 
+      objectReference: {fileID: 641758777}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a022b866cbd1717429f5965073d74053, type: 3}
 --- !u!1001 &2033177257
@@ -2977,6 +2997,16 @@ PrefabInstance:
       propertyPath: player4
       value: 
       objectReference: {fileID: 1814635025}
+    - target: {fileID: 4320650382399649909, guid: de20bb87a70489a449d3170f0918e4f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850972140335797787, guid: de20bb87a70489a449d3170f0918e4f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3192418857833053658, guid: de20bb87a70489a449d3170f0918e4f1,
         type: 3}
       propertyPath: m_IsActive
