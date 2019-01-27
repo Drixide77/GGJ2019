@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     public WaveSoundController WaveSounds;
     public StartRoundSound StartRoundSounds;
     public JoinSound JoinSounds;
+    public MenuFXController IngameMenuButtonSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +50,9 @@ public class SoundManager : MonoBehaviour
 
     public void PlayJoinSound() {
         JoinSounds.PlayJoin();
+    }
+
+    public void PlayButtonSound() {
+        IngameMenuButtonSound.PlayButtonFX();
     }
 }

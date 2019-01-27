@@ -755,8 +755,9 @@ MonoBehaviour:
   GameMusic: {fileID: 8967619246484848942}
   StarSounds: {fileID: 8967619247029344606}
   WaveSounds: {fileID: 21742458949242707}
-  StartRoundSounds: {fileID: 0}
-  JoinSounds: {fileID: 0}
+  StartRoundSounds: {fileID: 7462095568602979071}
+  JoinSounds: {fileID: 6595421137761255656}
+  IngameMenuButtonSound: {fileID: 7945730249985197745}
 --- !u!1 &8967619247029344576
 GameObject:
   m_ObjectHideFlags: 0
