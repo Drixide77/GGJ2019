@@ -17,6 +17,10 @@ public class JoinScreenController : MonoBehaviour
 
     public GameController gameController;
 
+    int minimumPlayers = 1;
+    int joinedPlayers = 0;
+    public GameObject pressStartPromt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,8 @@ public class JoinScreenController : MonoBehaviour
         gameController.player3.gameObject.SetActive(false);
         gameController.player4.gameObject.SetActive(false);
 
+        pressStartPromt.SetActive(false);
+
         // gameObject.SetActive(false);
     }
 
@@ -47,6 +53,7 @@ public class JoinScreenController : MonoBehaviour
             gameController.uiController.SetPlayerEnabled(1, true);
             gameController.player1.gameObject.SetActive(true);
             crab1.gameObject.SetActive(true);
+            ++joinedPlayers;
         }
 
         if (Input.GetButtonDown("Fire1_2") && !gameController.player2Active)
@@ -55,6 +62,7 @@ public class JoinScreenController : MonoBehaviour
             gameController.uiController.SetPlayerEnabled(2, true);
             gameController.player2.gameObject.SetActive(true);
             crab2.gameObject.SetActive(true);
+            ++joinedPlayers;
         }
 
         if (Input.GetButtonDown("Fire1_3") && !gameController.player3Active)
@@ -63,6 +71,7 @@ public class JoinScreenController : MonoBehaviour
             gameController.uiController.SetPlayerEnabled(3, true);
             gameController.player3.gameObject.SetActive(true);
             crab3.gameObject.SetActive(true);
+            ++joinedPlayers;
         }
 
         if (Input.GetButtonDown("Fire1_4") && !gameController.player4Active)
@@ -71,12 +80,18 @@ public class JoinScreenController : MonoBehaviour
             gameController.uiController.SetPlayerEnabled(4, true);
             gameController.player4.gameObject.SetActive(true);
             crab4.gameObject.SetActive(true);
+            ++joinedPlayers;
         }
 
-        if (Input.GetButtonDown("Start"))
+        if (joinedPlayers >= minimumPlayers && Input.GetButtonDown("Start"))
         {
             gameController.StartTimer();
             gameObject.SetActive(false);
+        }
+
+        if (!pressStartPromt.activeInHierarchy && joinedPlayers >= minimumPlayers)
+        {
+            pressStartPromt.SetActive(true);
         }
     }
 }
