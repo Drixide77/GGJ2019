@@ -73,7 +73,7 @@ public class JoinScreenController : MonoBehaviour
             crab4.gameObject.SetActive(true);
         }
 
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Start"))
         {
             gameController.StartTimer();
             gameObject.SetActive(false);

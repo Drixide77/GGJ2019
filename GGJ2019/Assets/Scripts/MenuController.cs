@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
@@ -10,7 +11,11 @@ public class MenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject FTPno = GameObject.Find("Play");
+        if (FTPno)
+        {
+            EventSystem.current.SetSelectedGameObject(FTPno);
+        }
     }
 
     // Update is called once per frame
