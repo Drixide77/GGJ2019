@@ -27,9 +27,4 @@ public class MenuSoundManager : MonoBehaviour
         fx.PlayButtonFX();
     }
 
-    public void PlayPlayerJoinFX() {
-        fx.PlayJoinFX();
-    }
-
-
 }
