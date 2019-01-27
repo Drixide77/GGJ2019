@@ -30,8 +30,20 @@ public class RigidBodyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!pause) ManageAlternativeInput();
         else {
+            InputX = 0.0f;
+            InputY = 0.0f;
+        }
+        */
+    }
+
+    void FixedUpdate()
+    {
+        if (!pause) ManageAlternativeInput();
+        else
+        {
             InputX = 0.0f;
             InputY = 0.0f;
         }
