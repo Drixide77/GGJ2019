@@ -7,7 +7,8 @@ public class SoundManager : MonoBehaviour
 
     public GameMusicController GameMusic;
     public StarSoundManager StarSounds;
-
+    public WaveSoundController WaveSounds;
+    public StartRoundControlller StartRoundSounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,4 +38,11 @@ public class SoundManager : MonoBehaviour
         StarSounds.PlayWinSound();
     }
 
+    public void PlayWaveSound() {
+        WaveSounds.PlayWaveFX();
+    }
+
+    public void PlayStartRoundSound() {
+        StartRoundSounds.PlayStartSound();
+    }
 }
