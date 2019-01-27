@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7736818239377630043}
   - component: {fileID: 7736818239377630042}
   m_Layer: 0
-  m_Name: ItemsSpawnEasy2
+  m_Name: ItemsSpawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,17 +74,17 @@ PrefabInstance:
     - target: {fileID: 282508643654753121, guid: f4a1d1998ee8d93409b30ae49139d86d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5259073
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 282508643654753121, guid: f4a1d1998ee8d93409b30ae49139d86d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 282508643654753121, guid: f4a1d1998ee8d93409b30ae49139d86d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3679254
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 282508643654753121, guid: f4a1d1998ee8d93409b30ae49139d86d,
         type: 3}
@@ -259,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 282508643654753121, guid: f4a1d1998ee8d93409b30ae49139d86d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5300001
+      value: 3.36
       objectReference: {fileID: 0}
     - target: {fileID: 282508643654753121, guid: f4a1d1998ee8d93409b30ae49139d86d,
         type: 3}

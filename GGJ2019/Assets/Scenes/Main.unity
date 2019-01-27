@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18048559, g: 0.22595605, b: 0.307036, a: 1}
+  m_IndirectSpecularColor: {r: 0.18048546, g: 0.22595598, b: 0.30703586, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1725,6 +1725,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3003b28aa7e2c3c4cac636d702b27545, type: 3}
+--- !u!114 &1669721609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5153642517647805463, guid: de20bb87a70489a449d3170f0918e4f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4320650384384740121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e5a78f60c93d54f93ab00ebe4336b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1674515147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5010141778788582232, guid: e8454b0086f2171409fdcd5f9b5cbafb,
@@ -1855,6 +1867,7 @@ MonoBehaviour:
   WaveSounds: {fileID: 0}
   StartRoundSounds: {fileID: 0}
   JoinSounds: {fileID: 0}
+  IngameMenuButtonSound: {fileID: 0}
 --- !u!4 &1741154596
 Transform:
   m_ObjectHideFlags: 0
@@ -2786,6 +2799,21 @@ PrefabInstance:
       propertyPath: player4
       value: 
       objectReference: {fileID: 1814635025}
+    - target: {fileID: 4320650383646258913, guid: de20bb87a70489a449d3170f0918e4f1,
+        type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1669721609}
+    - target: {fileID: 4320650382399649909, guid: de20bb87a70489a449d3170f0918e4f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850972140335797787, guid: de20bb87a70489a449d3170f0918e4f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4320650384148459965, guid: de20bb87a70489a449d3170f0918e4f1,
         type: 3}
       propertyPath: m_IsActive
@@ -2796,11 +2824,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300002, guid: 7a739810b52258141aa9ded8cd89c0d9,
         type: 3}
-    - target: {fileID: 4320650382399649909, guid: de20bb87a70489a449d3170f0918e4f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 820210778, guid: de20bb87a70489a449d3170f0918e4f1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2887,10 +2910,5 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7a739810b52258141aa9ded8cd89c0d9,
         type: 3}
-    - target: {fileID: 8850972140335797787, guid: de20bb87a70489a449d3170f0918e4f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de20bb87a70489a449d3170f0918e4f1, type: 3}
