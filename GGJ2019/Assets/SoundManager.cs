@@ -5,9 +5,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public GameObject GameMusic;
-    public GameObject StarSounds;
-    //public Clips
+    public GameMusicController GameMusic;
+    public StarSoundManager StarSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +20,21 @@ public class SoundManager : MonoBehaviour
         
     }
 
+
+    public void PlayIngameMusic() {
+        GameMusic.PlayDefaultMusic();
+    }
+
+    public void PlaySpeedUpMusic() {
+        GameMusic.PlayFasterMusic();
+    }
+
     public void PlayStarSound() {
-        
+        StarSounds.PlayStarAcquired();
     }
 
     public void PlayWinSound() {
-
+        StarSounds.PlayWinSound();
     }
 
 }
