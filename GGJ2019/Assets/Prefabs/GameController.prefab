@@ -4536,6 +4536,7 @@ MonoBehaviour:
   colorPlayer2: {r: 0.10980393, g: 0.54509807, b: 0.8745099, a: 1}
   colorPlayer3: {r: 0.14901961, g: 0.69803923, b: 0.19607845, a: 1}
   colorPlayer4: {r: 0.78823537, g: 0.23137257, b: 0.85098046, a: 1}
+  bubbles: {fileID: 3329903930624074029, guid: e2fc23fd779168a4a82f08a767d3ddd9, type: 3}
 --- !u!82 &4320650383646258912
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5912,6 +5913,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4320650383646258926}
     m_Modifications:
+    - target: {fileID: 1710181111261938905, guid: 6d64c8e3694428d41be1a197581d7a4c,
+        type: 3}
+      propertyPath: m_Name
+      value: Wave
+      objectReference: {fileID: 0}
     - target: {fileID: 3456653977892570398, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5981,11 +5987,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.3040242
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710181111261938905, guid: 6d64c8e3694428d41be1a197581d7a4c,
-        type: 3}
-      propertyPath: m_Name
-      value: Wave
       objectReference: {fileID: 0}
     - target: {fileID: 8588824694253750551, guid: 6d64c8e3694428d41be1a197581d7a4c,
         type: 3}
