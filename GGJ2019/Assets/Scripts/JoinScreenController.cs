@@ -20,7 +20,7 @@ public class JoinScreenController : MonoBehaviour
     int minimumPlayers = 1;
     int joinedPlayers = 0;
     public GameObject pressStartPromt;
-
+    public SoundManager soundManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +49,7 @@ public class JoinScreenController : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1_1") && !gameController.player1Active) {
+            soundManager.PlayJoinSound();
             gameController.player1Active = true;
             gameController.uiController.SetPlayerEnabled(1, true);
             gameController.player1.gameObject.SetActive(true);
@@ -58,6 +59,7 @@ public class JoinScreenController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1_2") && !gameController.player2Active)
         {
+            soundManager.PlayJoinSound();
             gameController.player2Active = true;
             gameController.uiController.SetPlayerEnabled(2, true);
             gameController.player2.gameObject.SetActive(true);
@@ -67,6 +69,7 @@ public class JoinScreenController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1_3") && !gameController.player3Active)
         {
+            soundManager.PlayJoinSound();
             gameController.player3Active = true;
             gameController.uiController.SetPlayerEnabled(3, true);
             gameController.player3.gameObject.SetActive(true);
@@ -76,6 +79,7 @@ public class JoinScreenController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1_4") && !gameController.player4Active)
         {
+            soundManager.PlayJoinSound();
             gameController.player4Active = true;
             gameController.uiController.SetPlayerEnabled(4, true);
             gameController.player4.gameObject.SetActive(true);
@@ -85,6 +89,7 @@ public class JoinScreenController : MonoBehaviour
 
         if (joinedPlayers >= minimumPlayers && Input.GetButtonDown("Start"))
         {
+            soundManager.PlayButtonSound();
             gameController.StartTimer();
             gameObject.SetActive(false);
         }

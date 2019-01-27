@@ -1937,6 +1937,7 @@ MonoBehaviour:
   crab4: {fileID: 931250955}
   gameController: {fileID: 4320650383646258913}
   pressStartPromt: {fileID: 1707873711}
+  soundManager: {fileID: 5153642517647805463}
 --- !u!1 &4320650382460571484
 GameObject:
   m_ObjectHideFlags: 0
@@ -6307,36 +6308,16 @@ PrefabInstance:
       propertyPath: IngameMenuButtonSound
       value: 
       objectReference: {fileID: 6175261035558219818}
-    - target: {fileID: 8967619247029344606, guid: aecba8a29f38309439b41c20e8f895c0,
-        type: 3}
-      propertyPath: clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2024552cefbf3624b983441ef4f81b7e, type: 3}
-    - target: {fileID: 8211904001662881819, guid: aecba8a29f38309439b41c20e8f895c0,
-        type: 3}
-      propertyPath: Priority
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8211904001662881819, guid: aecba8a29f38309439b41c20e8f895c0,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1198274822962651519, guid: aecba8a29f38309439b41c20e8f895c0,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3227819423336407479, guid: aecba8a29f38309439b41c20e8f895c0,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 8967619246484848941, guid: aecba8a29f38309439b41c20e8f895c0,
         type: 3}
       propertyPath: m_Volume
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8967619247029344606, guid: aecba8a29f38309439b41c20e8f895c0,
+        type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2024552cefbf3624b983441ef4f81b7e, type: 3}
     - target: {fileID: 5938243297801443676, guid: aecba8a29f38309439b41c20e8f895c0,
         type: 3}
       propertyPath: m_audioClip
@@ -6351,6 +6332,26 @@ PrefabInstance:
         type: 3}
       propertyPath: Priority
       value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211904001662881819, guid: aecba8a29f38309439b41c20e8f895c0,
+        type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211904001662881819, guid: aecba8a29f38309439b41c20e8f895c0,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227819423336407479, guid: aecba8a29f38309439b41c20e8f895c0,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198274822962651519, guid: aecba8a29f38309439b41c20e8f895c0,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aecba8a29f38309439b41c20e8f895c0, type: 3}
