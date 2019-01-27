@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     public GameMusicController GameMusic;
     public StarSoundManager StarSounds;
     public WaveSoundController WaveSounds;
-    public StartRoundControlller StartRoundSounds;
+    public StartRoundSound StartRoundSounds;
     // Start is called before the first frame update
     void Start()
     {
