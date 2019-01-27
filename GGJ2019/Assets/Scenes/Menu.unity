@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 52501666}
-  m_IndirectSpecularColor: {r: 0.14717531, g: 0.2453292, b: 0.4088649, a: 1}
+  m_IndirectSpecularColor: {r: 0.14717568, g: 0.24532953, b: 0.40886402, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2267,11 +2267,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1417978011}
     m_Modifications:
-    - target: {fileID: 5885252221489754246, guid: af36fdd368322094a964263e4da759b5,
-        type: 3}
-      propertyPath: m_Name
-      value: rock1
-      objectReference: {fileID: 0}
     - target: {fileID: 5885252221490048166, guid: af36fdd368322094a964263e4da759b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2326,6 +2321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 115.673996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885252221489754246, guid: af36fdd368322094a964263e4da759b5,
+        type: 3}
+      propertyPath: m_Name
+      value: rock1
       objectReference: {fileID: 0}
     - target: {fileID: 5885252221487754822, guid: af36fdd368322094a964263e4da759b5,
         type: 3}
@@ -3463,7 +3463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa1514a35af7b3c46b82fdf139c8c021, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4
+      value: 5.76
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa1514a35af7b3c46b82fdf139c8c021, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3471,7 +3471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa1514a35af7b3c46b82fdf139c8c021, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.25
+      value: 8.02
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa1514a35af7b3c46b82fdf139c8c021, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4797,8 +4797,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.1, y: 339.3}
-  m_SizeDelta: {x: 2275, y: 300}
+  m_AnchoredPosition: {x: 494.6, y: 235.7}
+  m_SizeDelta: {x: 2275, y: 1040.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709781173
 MonoBehaviour:
@@ -4822,7 +4822,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b2fc6ae73cee4d741ab6d5c714c033eb, type: 3}
-    m_FontSize: 300
+    m_FontSize: 228
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -4832,8 +4832,12 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Shell Frenzy
+    m_LineSpacing: 0.6
+  m_Text: 'CRAB
+
+    HOME
+
+    RUSH'
 --- !u!222 &1709781174
 CanvasRenderer:
   m_ObjectHideFlags: 0
