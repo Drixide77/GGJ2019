@@ -121,13 +121,17 @@ public class GameController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        bool threeShellsCollected = false;
+        int starPlayer = 0;
+
         // Check player score
         if (player1Active && player1.score > player1Score)
         {
             player1Score = player1.score;
             if (player1.score % 3 == 0)
             {
-                player1.CallCleanShells();
+                threeShellsCollected = true;
+                starPlayer = 1;
             }
             uiController.SetScoreForPlayer(player1.score, 1);
             if (player1.score == 9)
@@ -140,10 +144,11 @@ public class GameController : MonoBehaviour {
             player2Score = player2.score;
             if (player2.score % 3 == 0)
             {
-                player2.CallCleanShells();
+                threeShellsCollected = true;
+                starPlayer = 2;
             }
             uiController.SetScoreForPlayer(player2.score, 2);
-            if (player1.score == 9)
+            if (player2.score == 9)
             {
                 FinishGame(false, 2);
             }
@@ -153,7 +158,8 @@ public class GameController : MonoBehaviour {
             player3Score = player3.score;
             if (player3.score % 3 == 0)
             {
-                player3.CallCleanShells();
+                threeShellsCollected = true;
+                starPlayer = 3;
             }
             uiController.SetScoreForPlayer(player3.score, 3);
             if (player3.score == 9)
@@ -166,13 +172,24 @@ public class GameController : MonoBehaviour {
             player4Score = player4.score;
             if (player4.score % 3 == 0)
             {
-                player4.CallCleanShells();
+                threeShellsCollected = true;
+                starPlayer = 4;
             }
             uiController.SetScoreForPlayer(player4.score, 4);
             if (player4.score == 9)
             {
                 FinishGame(false, 4);
             }
+        }
+
+        if (threeShellsCollected)
+        {
+            player1.pause = true;
+            player2.pause = true;
+            player3.pause = true;
+            player4.pause = true;
+
+            StartCoroutine(DoWinStar(starPlayer));
         }
 
         if (!gameRunning && resultCanvas.activeInHierarchy)
@@ -182,6 +199,25 @@ public class GameController : MonoBehaviour {
                 SceneManager.LoadScene("Menu");
             }
         }
+    }
+
+    IEnumerator DoWinStar(int playerId)
+    {
+        // Play Fanfare Sound
+        yield return new WaitForSeconds(2.0f);
+        if (player1.gameObject.activeInHierarchy) player1.CallCleanShells();
+        if (player2.gameObject.activeInHierarchy) player2.CallCleanShells();
+        if (player3.gameObject.activeInHierarchy) player3.CallCleanShells();
+        if (player4.gameObject.activeInHierarchy) player4.CallCleanShells();
+
+        // Play ding sound
+
+        player1.pause = false;
+        player2.pause = false;
+        player3.pause = false;
+        player4.pause = false;
+
+        roundNumber = 0;
     }
 
     void Unfade()

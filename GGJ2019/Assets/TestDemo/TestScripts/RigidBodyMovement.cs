@@ -41,6 +41,7 @@ public class RigidBodyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log("Player pause: "+pause);
         if (!pause) ManageAlternativeInput();
         else
         {
@@ -102,6 +103,7 @@ public class RigidBodyMovement : MonoBehaviour
 
 
     public void CallTheShellCoroutine() {
-        StartCoroutine(CleanShells());
+        // StartCoroutine(CleanShells());
+        CallCleanShells();
     }
 }
