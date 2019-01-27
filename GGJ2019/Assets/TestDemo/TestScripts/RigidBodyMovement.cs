@@ -64,6 +64,10 @@ public class RigidBodyMovement : MonoBehaviour
         rotationSpeedFactor *= 1.25f;
     }
 
+    public int GetConchCount() {
+        return conches.Count;
+    }
+
     public GameObject GetLastConch()
     {
         if (conches.Count > 0) return conches[conches.Count - 1];
@@ -74,6 +78,7 @@ public class RigidBodyMovement : MonoBehaviour
         for (int i = conches.Count - 1; i >= 0; --i) {
             Destroy(conches[i]);
         }
+        conches.Clear();
         forwardSpeedFactor = originalSpeedFactor;
         rotationSpeedFactor = originalRotationFactor;
     }
