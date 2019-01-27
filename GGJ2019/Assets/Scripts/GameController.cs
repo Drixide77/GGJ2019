@@ -75,6 +75,8 @@ public class GameController : MonoBehaviour {
 
     bool finishedGame = false;
 
+    int currentNumberOfShells = 99;
+
     // Start is called before the first frame update
     void Start() {
         GenerateRoundTimes();
@@ -95,6 +97,8 @@ public class GameController : MonoBehaviour {
         timerText.text = "READY?";
         roundTimer.text = "";
         int[] roundTimers = new int[numberOfRounds];
+
+        currentNumberOfShells = mapRespawner.currentMap.GetComponent<ShellCount>().numberOfShells;
 
         Unfade();
         // StartTimer();
@@ -120,6 +124,7 @@ public class GameController : MonoBehaviour {
             {
                 spawnTriggered = true;
                 mapRespawner.ReMap();
+                currentNumberOfShells = mapRespawner.currentMap.GetComponent<ShellCount>().numberOfShells;
                 respawnManager.Respawn();
                 Instantiate(bubbles);
             }
@@ -138,6 +143,7 @@ public class GameController : MonoBehaviour {
         // Check player score
         if (player1Active && player1.score > player1Score)
         {
+            --currentNumberOfShells;
             if (player1.score == 8  && !speedUp)
             {
                 speedUp = true;
@@ -159,6 +165,7 @@ public class GameController : MonoBehaviour {
         }
         if (player2Active && player2.score > player2Score)
         {
+            --currentNumberOfShells;
             if (player2.score == 8 && !speedUp)
             {
                 speedUp = true;
@@ -180,6 +187,7 @@ public class GameController : MonoBehaviour {
         }
         if (player3Active && player3.score > player3Score)
         {
+            --currentNumberOfShells;
             if (player3.score == 8 && !speedUp)
             {
                 speedUp = true;
@@ -201,6 +209,7 @@ public class GameController : MonoBehaviour {
         }
         if (player4Active && player4.score > player4Score)
         {
+            --currentNumberOfShells;
             if (player4.score == 8 && !speedUp)
             {
                 speedUp = true;
@@ -229,6 +238,13 @@ public class GameController : MonoBehaviour {
             player4.pause = true;
 
             StartCoroutine(DoWinStar(starPlayer));
+        }
+        else if (currentNumberOfShells <= 0)
+        {
+            currentNumberOfShells = 99;
+            roundNumber = 0;
+            currentTime = 1;
+            soundManager.PlayWaveSound();
         }
 
         if (!gameRunning && resultCanvas.activeInHierarchy)
@@ -280,8 +296,12 @@ public class GameController : MonoBehaviour {
         roundTimer.text = "";
         timerText.text = "";
 
+        roundNumber = 0;
+        currentTime = 1;
+        soundManager.PlayWaveSound();
+
         // Play Fanfare Sound
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
         if (player1.gameObject.activeInHierarchy) player1.CallCleanShells();
         if (player2.gameObject.activeInHierarchy) player2.CallCleanShells();
         if (player3.gameObject.activeInHierarchy) player3.CallCleanShells();
@@ -293,9 +313,6 @@ public class GameController : MonoBehaviour {
         player2.pause = false;
         player3.pause = false;
         player4.pause = false;
-
-        roundNumber = 0;
-        currentTime = 1;
     }
 
     void Unfade()
@@ -324,7 +341,7 @@ public class GameController : MonoBehaviour {
     void FinishGame(bool timeOut, int playerId )
     {
         gameRunning = false;
-        nextWaveText.text = "";
+        nextWaveText.gameObject.SetActive(true);
         timerText.text = "FINISH!";
 
         soundManager.StopMusic();

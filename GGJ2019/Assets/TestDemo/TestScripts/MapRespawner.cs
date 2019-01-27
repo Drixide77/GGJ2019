@@ -8,13 +8,18 @@ public class MapRespawner : MonoBehaviour
     public GameObject[] maps;
     bool renew = false;
     private List<GameObject> availableMaps;
-    private GameObject currentMap;
+    public GameObject currentMap;
+
+    private void Awake()
+    {
+        availableMaps = new List<GameObject>(maps);
+        ReMap();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        availableMaps = new List<GameObject>(maps);
-        ReMap();
+       
     }
 
     // Update is called once per frame
