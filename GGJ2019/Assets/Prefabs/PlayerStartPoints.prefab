@@ -973,6 +973,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 709695771329600023}
     - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
+      propertyPath: pickParticles
+      value: 
+      objectReference: {fileID: 4344560279820018033, guid: bc64a2e00cfb94f408667c1082befea9,
+        type: 3}
+    - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
       propertyPath: newCapsulePos
       value: 
       objectReference: {fileID: 594989114}
@@ -1215,6 +1220,11 @@ PrefabInstance:
       propertyPath: tailIn
       value: 
       objectReference: {fileID: 709695770597496131}
+    - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
+      propertyPath: pickParticles
+      value: 
+      objectReference: {fileID: 4344560279820018033, guid: bc64a2e00cfb94f408667c1082befea9,
+        type: 3}
     - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
       propertyPath: newCapsulePos
       value: 
@@ -1459,6 +1469,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 709695771540120204}
     - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
+      propertyPath: pickParticles
+      value: 
+      objectReference: {fileID: 4344560279820018033, guid: bc64a2e00cfb94f408667c1082befea9,
+        type: 3}
+    - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
       propertyPath: newCapsulePos
       value: 
       objectReference: {fileID: 1459267745}
@@ -1701,6 +1716,11 @@ PrefabInstance:
       propertyPath: tailIn
       value: 
       objectReference: {fileID: 709695771594420535}
+    - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
+      propertyPath: pickParticles
+      value: 
+      objectReference: {fileID: 4344560279820018033, guid: bc64a2e00cfb94f408667c1082befea9,
+        type: 3}
     - target: {fileID: 105370282, guid: a589beea8d139b7419c63c8967275974, type: 3}
       propertyPath: newCapsulePos
       value: 

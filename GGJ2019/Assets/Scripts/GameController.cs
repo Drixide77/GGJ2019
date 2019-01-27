@@ -61,6 +61,8 @@ public class GameController : MonoBehaviour {
 
     int[] scores = new int[4];
 
+    public GameObject bubbles;
+
     Action nextRoundCallback;
 
     // Start is called before the first frame update
@@ -108,6 +110,7 @@ public class GameController : MonoBehaviour {
                 spawnTriggered = true;
                 mapRespawner.ReMap();
                 respawnManager.Respawn();
+                Instantiate(bubbles);
             }
 
             currentTime += Time.deltaTime;

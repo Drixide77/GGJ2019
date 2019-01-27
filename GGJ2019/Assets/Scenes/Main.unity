@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18048546, g: 0.22595598, b: 0.30703586, a: 1}
+  m_IndirectSpecularColor: {r: 0.18048559, g: 0.22595605, b: 0.307036, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,7 +386,8 @@ PrefabInstance:
       propertyPath: m_Depth
       value: -10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1136936946897467464, guid: ee53c7c7dad84634d97f3e3e042e16c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee53c7c7dad84634d97f3e3e042e16c8, type: 3}
 --- !u!4 &414976997 stripped
 Transform:
@@ -2629,11 +2630,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameController
-      objectReference: {fileID: 0}
-    - target: {fileID: 4320650383646258927, guid: de20bb87a70489a449d3170f0918e4f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4320650383646258926, guid: de20bb87a70489a449d3170f0918e4f1,
         type: 3}
