@@ -237,7 +237,7 @@ public class GameController : MonoBehaviour {
     IEnumerator StartTimerCoroutine(Action callback)
     {
         int countdown = initialCountdown;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.5f);
 
         timerText.text = "GO!";
         roundTimer.text = "Round: " + (roundNumber + 1);
