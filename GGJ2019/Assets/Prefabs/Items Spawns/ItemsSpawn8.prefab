@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6806423926736393445}
   - component: {fileID: 6806423926736393444}
   - component: {fileID: 6806423926736393447}
+  - component: {fileID: 1514737235216720020}
   m_Layer: 0
   m_Name: ItemsSpawn8
   m_TagString: Untagged
@@ -57,6 +58,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsRotable: 1
+--- !u!114 &1514737235216720020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806423926736393446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a35ba00d3997fd46bcad2abfcc85596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfShells: 2
 --- !u!1001 &6806423926422769860
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5620549170522923706}
   - component: {fileID: 5620549170522923705}
   - component: {fileID: 5620549170522923704}
+  - component: {fileID: 4544512238716552157}
   m_Layer: 0
-  m_Name: ItemsSpawnEasy4
+  m_Name: ItemsSpawn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,6 +57,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsRotable: 1
+--- !u!114 &4544512238716552157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5620549170522923711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a35ba00d3997fd46bcad2abfcc85596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfShells: 1
 --- !u!1001 &5620549170995056825
 PrefabInstance:
   m_ObjectHideFlags: 0
