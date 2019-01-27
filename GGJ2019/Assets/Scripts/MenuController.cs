@@ -9,7 +9,7 @@ public class MenuController : MonoBehaviour
 {
     public Fader fader;
     public GameObject howToCanvas;
-
+    public MenuSoundManager msm;
     public Button play;
     public Button howTo;
     public Button exit;
@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(FTPno);
         }
+        msm.PlayMenuMusic();
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class MenuController : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire2_1") || Input.GetButtonDown("Fire2_2") || Input.GetButtonDown("Fire2_3") || Input.GetButtonDown("Fire2_4"))
             {
+                OnButtonPressed();
                 play.interactable = true;
                 howTo.interactable = true;
                 exit.interactable = true;
@@ -49,6 +51,7 @@ public class MenuController : MonoBehaviour
     public void OnStartGamePressed()
     {
         Debug.Log("Game Start Pressed");
+        OnButtonPressed();
         fader.DoFade(1.0f, 0.2f, (finish) =>
             {
                 SceneManager.LoadScene("Main", LoadSceneMode.Single);
@@ -59,6 +62,7 @@ public class MenuController : MonoBehaviour
     public void OnHowToPressed()
     {
         Debug.Log("HowToPressed");
+        OnButtonPressed();
         howToCanvas.SetActive(true);
         play.interactable = false;
         howTo.interactable = false;
@@ -73,5 +77,9 @@ public class MenuController : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void OnButtonPressed() {
+        msm.PlayButtonFX();
     }
 }

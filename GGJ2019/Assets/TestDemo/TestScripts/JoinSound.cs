@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuSoundManager : MonoBehaviour
+public class JoinSound : MonoBehaviour
 {
 
-    public MenuFXController fx;
-    public MenuMusicController music;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,12 +18,7 @@ public class MenuSoundManager : MonoBehaviour
         
     }
 
-    public void PlayMenuMusic() {
-        music.PlayMusic();
+    public void PlayJoin() {
+        audioSource.Play();
     }
-
-    public void PlayButtonFX() {
-        fx.PlayButtonFX();
-    }
-
 }
