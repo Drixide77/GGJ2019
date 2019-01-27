@@ -1866,6 +1866,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerStartPoints
       objectReference: {fileID: 0}
+    - target: {fileID: 709695771487579808, guid: a022b866cbd1717429f5965073d74053,
+        type: 3}
+      propertyPath: speed
+      value: 3000
+      objectReference: {fileID: 0}
     - target: {fileID: 8876028233088523031, guid: a022b866cbd1717429f5965073d74053,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1921,6 +1926,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1057601146, guid: a022b866cbd1717429f5965073d74053, type: 3}
+      propertyPath: pickParticles
+      value: 
+      objectReference: {fileID: 4344560279820018033, guid: bc64a2e00cfb94f408667c1082befea9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a022b866cbd1717429f5965073d74053, type: 3}
 --- !u!1001 &2033177257
