@@ -81,7 +81,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9062580787961217607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -238,6 +238,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2205244030850761741, guid: ddf346a324bbff04890a1aaa66c431da,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6908106371736839174, guid: ddf346a324bbff04890a1aaa66c431da,
         type: 3}
       propertyPath: m_Mass
@@ -251,11 +256,6 @@ PrefabInstance:
     - target: {fileID: 6908106371736839174, guid: ddf346a324bbff04890a1aaa66c431da,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2205244030850761741, guid: ddf346a324bbff04890a1aaa66c431da,
-        type: 3}
-      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

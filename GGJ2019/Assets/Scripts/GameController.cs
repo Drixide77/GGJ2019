@@ -69,6 +69,8 @@ public class GameController : MonoBehaviour {
 
     public GameObject BackToMenu;
 
+    public SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start() {
         GenerateRoundTimes();
@@ -331,6 +333,9 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(2.5f);
 
         timerText.text = "GO!";
+        soundManager.PlayStartRoundSound();
+        yield return new WaitForSeconds(1.5f);
+        soundManager.PlayIngameMusic();
         roundTimer.text = "Round: " + (roundNumber + 1);
         /*
         nextWaveText.text = "Game begins in";
@@ -350,7 +355,6 @@ public class GameController : MonoBehaviour {
         */
 
         callback();
-        yield return new WaitForSeconds(0.5f);
         nextWaveText.text = "Next Wave";
         timerText.text = "" + currentTime;
 
