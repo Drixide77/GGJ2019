@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1804857, g: 0.22595635, b: 0.30703664, a: 1}
+  m_IndirectSpecularColor: {r: 0.18048546, g: 0.22595598, b: 0.30703586, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2385,6 +2385,26 @@ PrefabInstance:
     - target: {fileID: 8876028233088523031, guid: a022b866cbd1717429f5965073d74053,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969082213303555371, guid: a022b866cbd1717429f5965073d74053,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969082213303555371, guid: a022b866cbd1717429f5965073d74053,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969082213303555371, guid: a022b866cbd1717429f5965073d74053,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969082213303555371, guid: a022b866cbd1717429f5965073d74053,
+        type: 3}
+      propertyPath: useRigidbodyForVelocity
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
