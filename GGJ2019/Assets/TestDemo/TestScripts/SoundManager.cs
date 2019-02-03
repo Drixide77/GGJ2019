@@ -11,6 +11,8 @@ public class SoundManager : MonoBehaviour
     public StartRoundSound StartRoundSounds;
     public JoinSound JoinSounds;
     public MenuFXController IngameMenuButtonSound;
+    public MenuMusicController menuMusicController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,4 +61,9 @@ public class SoundManager : MonoBehaviour
     public void PlayButtonSound() {
         IngameMenuButtonSound.PlayButtonFX();
     }
+
+    public void StopJoinMusic()
+    {
+        menuMusicController.StopMusic();
+    } 
 }

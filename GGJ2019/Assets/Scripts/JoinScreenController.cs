@@ -89,6 +89,7 @@ public class JoinScreenController : MonoBehaviour
 
         if (joinedPlayers >= minimumPlayers && Input.GetButtonDown("Start"))
         {
+            soundManager.StopJoinMusic();
             soundManager.PlayButtonSound();
             gameController.StartTimer();
             gameObject.SetActive(false);

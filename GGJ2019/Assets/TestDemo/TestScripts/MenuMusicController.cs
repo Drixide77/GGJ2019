@@ -24,7 +24,13 @@ public class MenuMusicController : MonoBehaviour
         
     }
 
-    public void PlayMusic() {
+    public void PlayMusic()
+    {
         audioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        audioSource.Stop();
     }
 }
