@@ -259,6 +259,7 @@ public class GameController : MonoBehaviour {
         {
             if (!exitMenuOpened && gameRunning)
             {
+                soundManager.PlayButtonSound();
                 BackToMenu.SetActive(true);
                 exitMenuOpened = true;
                 gameRunning = false;
@@ -278,6 +279,7 @@ public class GameController : MonoBehaviour {
             }
             if (Input.GetButtonDown("Fire2_1") || Input.GetButtonDown("Fire2_2") || Input.GetButtonDown("Fire2_3") || Input.GetButtonDown("Fire2_4"))
             {
+                soundManager.PlayButtonSound();
                 BackToMenu.SetActive(false);
                 exitMenuOpened = false;
                 gameRunning = true;
