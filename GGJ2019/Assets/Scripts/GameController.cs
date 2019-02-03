@@ -304,10 +304,26 @@ public class GameController : MonoBehaviour {
 
         // Play Fanfare Sound
         yield return new WaitForSeconds(3.0f);
-        if (player1.gameObject.activeInHierarchy) player1.CallCleanShells();
-        if (player2.gameObject.activeInHierarchy) player2.CallCleanShells();
-        if (player3.gameObject.activeInHierarchy) player3.CallCleanShells();
-        if (player4.gameObject.activeInHierarchy) player4.CallCleanShells();
+        if (player1.gameObject.activeInHierarchy)
+        {
+            player1.CallCleanShells();
+            player1Score = 0;
+        }
+        if (player2.gameObject.activeInHierarchy)
+        {
+            player2.CallCleanShells();
+            player2Score = 0;
+        }
+        if (player3.gameObject.activeInHierarchy)
+        {
+            player3.CallCleanShells();
+            player3Score = 0;
+        }
+        if (player4.gameObject.activeInHierarchy)
+        {
+            player4.CallCleanShells();
+            player4Score = 0;
+        }
 
         // Play ding sound
 

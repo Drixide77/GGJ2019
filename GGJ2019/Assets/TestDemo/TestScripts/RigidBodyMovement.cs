@@ -91,6 +91,7 @@ public class RigidBodyMovement : MonoBehaviour
         for (int i = conches.Count - 1; i >= 0; --i) {
             Destroy(conches[i]);
         }
+        score = 0;
         conches.Clear();
         forwardSpeedFactor = originalSpeedFactor;
         rotationSpeedFactor = originalRotationFactor;
