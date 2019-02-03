@@ -5,6 +5,7 @@ using UnityEngine;
 public class MenuFXController : MonoBehaviour
 {
     private AudioSource audioSource;
+    public AudioClip[] clips;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,15 @@ public class MenuFXController : MonoBehaviour
 
     public void PlayButtonFX()
     {
+        audioSource.clip = clips[0];
         audioSource.Play();
     }
 
+
+    public void PlayButtonHighlight() {
+        audioSource.clip = clips[1];
+        audioSource.Play();
+    }
 
 }
 

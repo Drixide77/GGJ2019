@@ -7,6 +7,7 @@ public class MenuSoundManager : MonoBehaviour
 
     public MenuFXController fx;
     public MenuMusicController music;
+    private bool first = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,11 @@ public class MenuSoundManager : MonoBehaviour
 
     public void PlayButtonFX() {
         fx.PlayButtonFX();
+    }
+
+    public void PlayButtonHigh() {
+        if (!first) fx.PlayButtonHighlight();
+        else first = false;
     }
 
 }
