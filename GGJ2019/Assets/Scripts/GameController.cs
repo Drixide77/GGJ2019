@@ -307,22 +307,22 @@ public class GameController : MonoBehaviour {
         if (player1.gameObject.activeInHierarchy)
         {
             player1.CallCleanShells();
-            player1Score = 0;
+            player1Score = player1Score - (player1Score%3);
         }
         if (player2.gameObject.activeInHierarchy)
         {
             player2.CallCleanShells();
-            player2Score = 0;
+            player2Score = player2Score - (player2Score % 3);
         }
         if (player3.gameObject.activeInHierarchy)
         {
             player3.CallCleanShells();
-            player3Score = 0;
+            player3Score = player3Score - (player3Score % 3);
         }
         if (player4.gameObject.activeInHierarchy)
         {
             player4.CallCleanShells();
-            player4Score = 0;
+            player4Score = player4Score - (player4Score % 3);
         }
 
         // Play ding sound
