@@ -298,7 +298,7 @@ public class GameController : MonoBehaviour {
         roundTimer.text = "";
         timerText.text = "";
 
-        roundNumber = 0;
+        roundNumber = -1;
         currentTime = 1;
         soundManager.PlayWaveSound();
 
