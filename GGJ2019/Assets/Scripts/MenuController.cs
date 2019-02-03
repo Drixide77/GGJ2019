@@ -14,6 +14,8 @@ public class MenuController : MonoBehaviour
     public Button howTo;
     public Button exit;
 
+    public EventSystem _eventSystem;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,6 @@ public class MenuController : MonoBehaviour
                 howToCanvas.SetActive(false);
             }
         }
-        
     }
 
     public void OnStartGamePressed()
